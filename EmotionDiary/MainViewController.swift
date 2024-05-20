@@ -44,10 +44,7 @@ class MainViewController: UIViewController {
         
         //buttons, labels
         for index in emotionButtons.indices {
-            emotionButtons[index].setImage(emotions[index].image, for: .normal)
-            emotionLabels[index].text = emotions[index].tapResult
-            emotionLabels[index].textAlignment = .center
-            emotionLabels[index].font = .systemFont(ofSize: 13)
+            setEmotionUI(button: emotionButtons[index], label: emotionLabels[index], emotion: emotions[index])
         }
     }
     
@@ -58,6 +55,13 @@ class MainViewController: UIViewController {
         //랜덤으로 숫자 보여지기
         //emotions[sender.tag].count = Int.random(in: 0...100)
         emotionLabels[sender.tag].text = emotions[sender.tag].tapResult
+    }
+    
+    private func setEmotionUI(button: UIButton, label: UILabel, emotion: Emotion){
+        button.setImage(emotion.image, for: .normal)
+        label.text = emotion.tapResult
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 13)
     }
     
 }
