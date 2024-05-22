@@ -224,22 +224,34 @@
                                     <constraint firstItem="hY6-R2-Rr6" firstAttribute="height" secondItem="abw-9s-XVF" secondAttribute="height" id="wcd-CH-hs6"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI9-YP-1Au">
+                                <rect key="frame" x="37.666666666666657" y="703" width="300" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="sH3-wt-ZZz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LUl-WL-OyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7XY-4q-ZPk"/>
                             <constraint firstItem="LUl-WL-OyA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7cW-5W-Mut"/>
+                            <constraint firstItem="Szd-N3-Yqv" firstAttribute="trailing" secondItem="dI9-YP-1Au" secondAttribute="trailing" id="9fa-yg-Jno"/>
                             <constraint firstItem="LUl-WL-OyA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EWt-fd-P1b"/>
                             <constraint firstItem="LUl-WL-OyA" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="IfI-Vg-Wla"/>
                             <constraint firstItem="Szd-N3-Yqv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PkN-1n-ixc"/>
                             <constraint firstItem="Szd-N3-Yqv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TFp-5Q-jyE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dI9-YP-1Au" secondAttribute="bottom" constant="30" id="nQi-he-YpW"/>
+                            <constraint firstItem="dI9-YP-1Au" firstAttribute="leading" secondItem="Szd-N3-Yqv" secondAttribute="leading" id="wDJ-Rm-Njh"/>
                             <constraint firstItem="Szd-N3-Yqv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="x7L-ij-Tng"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rG4-W1-Xyd"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="LUl-WL-OyA" id="IRX-Pb-2sG"/>
+                        <outlet property="resetCountButton" destination="dI9-YP-1Au" id="DpK-yl-2wQ"/>
                         <outletCollection property="emotionButtons" destination="abw-9s-XVF" collectionClass="NSMutableArray" id="hOX-wA-uTe"/>
                         <outletCollection property="emotionButtons" destination="95J-o5-6VO" collectionClass="NSMutableArray" id="0uG-lE-SCn"/>
                         <outletCollection property="emotionButtons" destination="ve5-BY-fJ5" collectionClass="NSMutableArray" id="GIV-9W-s1Z"/>
@@ -262,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038.1395348837209" y="-2.5751072961373391"/>
+            <point key="canvasLocation" x="1037.5999999999999" y="-2.9556650246305418"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YQJ-WH-Ld0">
