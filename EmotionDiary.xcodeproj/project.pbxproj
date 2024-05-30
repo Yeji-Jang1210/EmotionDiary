@@ -12,6 +12,7 @@
 		B80241812BF8393600A49893 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B80241802BF8393600A49893 /* Base */; };
 		B80241832BF8393800A49893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80241822BF8393800A49893 /* Assets.xcassets */; };
 		B80241862BF8393800A49893 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B80241852BF8393800A49893 /* Base */; };
+		B83188152C087B6C008ADBE6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83188142C087B6C008ADBE6 /* UserDefaultsManager.swift */; };
 		B894A6D62BF83B8F006C68F0 /* Emotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894A6D52BF83B8F006C68F0 /* Emotions.swift */; };
 		B894A6D82BF84782006C68F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894A6D72BF84782006C68F0 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		B80241822BF8393800A49893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B80241852BF8393800A49893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B80241872BF8393800A49893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B83188142C087B6C008ADBE6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B894A6D52BF83B8F006C68F0 /* Emotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotions.swift; sourceTree = "<group>"; };
 		B894A6D72BF84782006C68F0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +60,8 @@
 		B80241782BF8393600A49893 /* EmotionDiary */ = {
 			isa = PBXGroup;
 			children = (
-				B894A6D42BF83B7B006C68F0 /* model */,
+				B83188132C087B57008ADBE6 /* Utils */,
+				B894A6D42BF83B7B006C68F0 /* Model */,
 				B80241792BF8393600A49893 /* AppDelegate.swift */,
 				B802417B2BF8393600A49893 /* SceneDelegate.swift */,
 				B894A6D72BF84782006C68F0 /* MainViewController.swift */,
@@ -70,12 +73,20 @@
 			path = EmotionDiary;
 			sourceTree = "<group>";
 		};
-		B894A6D42BF83B7B006C68F0 /* model */ = {
+		B83188132C087B57008ADBE6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B83188142C087B6C008ADBE6 /* UserDefaultsManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B894A6D42BF83B7B006C68F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				B894A6D52BF83B8F006C68F0 /* Emotions.swift */,
 			);
-			path = model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B802417A2BF8393600A49893 /* AppDelegate.swift in Sources */,
+				B83188152C087B6C008ADBE6 /* UserDefaultsManager.swift in Sources */,
 				B802417C2BF8393600A49893 /* SceneDelegate.swift in Sources */,
 				B894A6D62BF83B8F006C68F0 /* Emotions.swift in Sources */,
 				B894A6D82BF84782006C68F0 /* MainViewController.swift in Sources */,

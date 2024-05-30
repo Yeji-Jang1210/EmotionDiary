@@ -15,7 +15,12 @@ class MainViewController: UIViewController {
     @IBOutlet var resetCountButton: UIButton!
     
     let emotions = Emotions.allCases
-    var counts: [Int] = []
+    var counts: [Int] = UserDefaultsManager.counts {
+        didSet {
+            print("hi")
+            UserDefaultsManager.counts = counts
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,26 +40,21 @@ class MainViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: nil)
         self.navigationItem.title = "감정 다이어리"
         
-        if let data = UserDefaults.standard.array(forKey: "counts") as? [Int] {
-            counts = data
-        } else {
-            counts = Array(repeating: 0, count: 9)
-        }
-        
         setEmotionUI()
         
         //resetButton
         resetCountButton.setTitle("값을 초기화 할래요", for: .normal)
         resetCountButton.setTitleColor(.white, for: .normal)
-        resetCountButton.tintColor = UIColor(named: "f28482") ?? .darkGray
+        resetCountButton.tintColor = ColorManager.c_f28482
         resetCountButton.layer.cornerRadius = 15
-        resetCountButton.backgroundColor = UIColor(named: "f5cac3") ?? .black
+        resetCountButton.backgroundColor = ColorManager.c_f5cac3
     }
     
     private func setAction(){
         resetCountButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
     }
     
+    /* 실질적인 값 가져오도록 수정하기*/
     private func setEmotionUI(){
         //buttons, labels
         for index in emotionButtons.indices {
@@ -80,8 +80,6 @@ class MainViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         //클릭 횟수 올리기
         counts[sender.tag] += 1
-        UserDefaults.standard.setValue(counts, forKey: "counts")
- 
         emotionLabels[sender.tag].text = "\(emotions[sender.tag].title) \(counts[sender.tag])"
     }
     
@@ -94,9 +92,7 @@ class MainViewController: UIViewController {
     }
     
     private func resetCounts(){
-        let emptyArray = Array(repeating: 0, count: 9)
-        UserDefaults.standard.setValue(emptyArray, forKey: "counts")
-        counts = emptyArray
+        counts = Array(repeating: 0, count: 9)
         setEmotionUI()
     }
 }

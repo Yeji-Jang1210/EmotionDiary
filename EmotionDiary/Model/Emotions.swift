@@ -11,12 +11,6 @@ import UIKit
 struct Emotion {
     var name: String
     var image: UIImage?
-//    var count: Int = 0
-//    var tapResult: String {
-//        get {
-//            return "\(name) \(count == 0 ? "" : "\(count)")"
-//        }
-//    }
 }
 
 enum Emotions: CaseIterable {
